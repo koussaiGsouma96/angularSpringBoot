@@ -1,0 +1,235 @@
+<!-- Toolbar -->
+<mat-toolbar color="primary" class="app-header">
+  <div><a href="https://www.positronx.io" target="_blank" class="positronx">PositronX.io</a></div>
+  <span class="nav-tool-items">
+    <a mat-button routerLink="login" routerLinkActive="active">Log in</a>
+    <a mat-button mat-raised-button routerLink="signupEmp" routerLinkActive="active">Register</a>
+  </span>
+</mat-toolbar><br>
+<br>
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card class="box">
+    <mat-card-header>
+      <mat-card-title>Register</mat-card-title>
+    </mat-card-header>
+
+    <form class="example-form">
+
+      <mat-card-content>
+       
+
+        <mat-form-field class="example-full-width"  fxLayoutAlign="center center" required> 
+          <mat-label>Choose a role...</mat-label>
+          <mat-select>
+            <mat-option [value]="roles" *ngFor="let roles of Roles">{{roles}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+      </mat-card-content>
+
+
+    </form>
+    
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+
+  <mat-step [stepControl]="firstFormGroup">
+
+    <form [formGroup]="firstFormGroup">
+
+      <ng-template matStepLabel>Details Personneles </ng-template>
+
+      <mat-form-field>
+
+        <mat-label>Name</mat-label>
+
+        <input matInput placeholder="Name" formControlName="name" required>
+
+      </mat-form-field>
+
+      <br/>
+
+
+      <mat-form-field>
+
+        <mat-label>Prenom</mat-label>
+
+        <textarea matInput placeholder="Prenom" formControlName="prenom" required>
+
+        </textarea>
+
+      </mat-form-field>
+
+      <br/>
+
+      <mat-form-field>
+
+        <mat-label>Age</mat-label>
+
+        <textarea matInput placeholder="Age" formControlName="age" required>
+
+        </textarea>
+
+      </mat-form-field>
+
+
+
+      <div>
+
+        <button mat-button matStepperNext>Next</button>
+
+      </div>
+
+    </form>
+
+  </mat-step>
+
+
+
+
+<mat-step [stepControl]="troisiemeFormGroup">
+
+  <form [formGroup]="troisiemeFormGroup">
+
+    <ng-template matStepLabel>Profession el adresse</ng-template>
+
+    <mat-form-field>
+
+      <mat-label>Profession</mat-label>
+
+      <input matInput placeholder="Profession" formControlName="profession" required>
+
+    </mat-form-field>
+
+    <br/>
+
+    <mat-form-field>
+
+      <mat-label>adresse</mat-label>
+
+      <input matInput placeholder="Adresse" formControlName="adresse" required>
+
+    </mat-form-field>
+
+    <br/>
+    <mat-form-field>
+
+      <mat-label>telephone</mat-label>
+
+      <input matInput placeholder="Telephone" formControlName="telephone" required>
+
+    </mat-form-field>
+
+    <br/>
+    <mat-form-field>
+
+      <mat-label>Description</mat-label>
+
+      <input matInput placeholder="Description" formControlName="description" required>
+
+    </mat-form-field>
+
+    <br/>
+
+    <div>
+
+      <button mat-button matStepperPrevious>Back</button>
+
+      <button mat-button matStepperNext>Next</button>
+
+    </div>
+
+  </form>
+
+</mat-step>
+
+
+
+
+
+  <mat-step [stepControl]="secondFormGroup">
+
+    <form [formGroup]="secondFormGroup">
+
+      <ng-template matStepLabel>Login</ng-template>
+
+      <mat-form-field>
+
+        <mat-label>Email</mat-label>
+
+        <input matInput placeholder="Email" formControlName="email" required>
+
+      </mat-form-field>
+
+      <br/>
+
+      <mat-form-field>
+
+        <mat-label>Password</mat-label>
+
+        <input matInput placeholder="Password" formControlName="password" required>
+
+      </mat-form-field>
+
+      <br/>
+
+      <div>
+
+        <button mat-button matStepperPrevious>Back</button>
+
+        <button mat-button matStepperNext>Next</button>
+
+      </div>
+
+    </form>
+
+  </mat-step>
+
+  <mat-step>
+
+    <ng-template matStepLabel>Done</ng-template>
+
+    <p>You are now done.</p>
+
+
+
+    <mat-list>
+
+	 <mat-list-item> <strong>Nom:</strong> {{ this.firstFormGroup.value.name }}</mat-list-item>
+
+	 <mat-list-item> <strong>Prenom:</strong> {{ this.firstFormGroup.value.prenom }}</mat-list-item>
+
+	 <mat-list-item> <strong>Age:</strong> {{ this.firstFormGroup.value.age }}</mat-list-item>
+
+	 <mat-list-item> <strong>Profession:</strong> {{ this.troisiemeFormGroup.value.profession }}</mat-list-item>
+
+	 <mat-list-item> <strong>Adresse:</strong> {{ this.troisiemeFormGroup.value.adresse }}</mat-list-item>
+
+	 <mat-list-item> <strong>Telephone:</strong> {{ this.troisiemeFormGroup.value.telephone }}</mat-list-item>
+
+
+	 <mat-list-item> <strong>Description:</strong> {{ this.troisiemeFormGroup.value.description }}</mat-list-item>
+
+	 <mat-list-item> <strong>Email:</strong> {{ this.secondFormGroup.value.email }}</mat-list-item>
+
+	 <mat-list-item> <strong>Password:</strong> {{ this.secondFormGroup.value.password }}</mat-list-item>
+
+	</mat-list>
+
+
+  <div>
+
+    <button mat-button matStepperPrevious>Back</button>
+
+    <button mat-button (click)="stepper.reset()">Reset</button>
+
+    <button mat-button (click)="submit()">Submit</button>
+
+  </div>
+
+</mat-step>
+
+</mat-horizontal-stepper> 
+  </mat-card>
+</div>
+<router-outlet></router-outlet>

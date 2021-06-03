@@ -1,0 +1,41 @@
+<br>
+<br>
+<br>
+<br>
+
+
+<form [formGroup]="add"  methode="post">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">nom</label>
+        <input type="email" class="form-control" id="inputEmail4" placeholder="nom" formControlName="nom">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">prenom</label>
+        <input type="text" class="form-control" id="inputPassword41" placeholder="prenom" formControlName="prenom">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">titre de bricolage</label>
+        <input type="text" class="form-control" id="inputPassword411" placeholder="titr de bricolage" formControlName="jobTitle">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">diplome</label>
+        <input type="text" class="form-control" id="inputPassword4111" placeholder="diplome" formControlName="diplome">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">telephone</label>
+        <input type="number" class="form-control" id="inputPassword41111" placeholder="phone" formControlName="phone">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputAddress">email</label>
+      <input type="text" class="form-control" id="inputAddress" placeholder="email  " formControlName="email">
+    </div>
+    <div class="form-group">
+      <label for="inputAddress2">Password</label>
+      <input type="password" class="form-control" id="inputAddress2" placeholder="password" formControlName="password">
+    </div>
+   
+  
+    <button type="submit" class="btn btn-primary" (click)="onadd()">Sign in</button>
+  </form>
