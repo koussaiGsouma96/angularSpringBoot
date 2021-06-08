@@ -1,0 +1,135 @@
+<br>
+<br>
+<br>
+<br>
+
+
+<button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+    {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+  </button>
+  <mat-horizontal-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup" method="POST">
+        <ng-template matStepLabel>Fill out your name</ng-template>
+        
+        
+        <mat-form-field>
+          <mat-label>Nom</mat-label>
+          <input matInput placeholder="Last name, First name" formControlName="nom" required>
+        </mat-form-field>
+        <br/>
+
+
+        <mat-form-field>
+          <mat-label>Prenom</mat-label>
+          <input matInput placeholder="prenom" formControlName="prenom" required>
+       
+      </mat-form-field> <br/>
+      <mat-form-field>
+          <mat-label>age</mat-label>
+          <input matInput placeholder="age" formControlName="age" required>
+        </mat-form-field>
+        <br/>
+       
+        <mat-form-field>
+          <mat-label>phone</mat-label>
+          <input matInput placeholder="phone" formControlName="phone" required>
+        </mat-form-field>
+        <br/>
+      
+        
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="troisiemeFormGroup" label="Fill out your address">
+      <form [formGroup]="troisiemeFormGroup">
+        <mat-form-field>
+          <mat-label>diplome</mat-label>
+          <input matInput placeholder="diplome" formControlName="diplome" required>
+        </mat-form-field>
+        <br/>
+        <mat-form-field>
+          <mat-label>jobTitle</mat-label>
+          <input matInput placeholder="jobTitle" formControlName="jobTitle" required>
+        </mat-form-field>
+        <br/>
+          <mat-form-field>
+          <mat-label>imageUrl</mat-label>
+          <input matInput placeholder="image" formControlName="imageUrl" required>
+        </mat-form-field>
+        <!--<form>
+  <div class="form-group">
+    <label for="exampleFormControlFile1">Example file input</label>
+    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+  </div>
+</form>-->
+         <br/>
+        <mat-form-field>
+          <mat-label>description</mat-label>
+          <input matInput placeholder="description" formControlName="description" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
+      <form [formGroup]="secondFormGroup">
+        <mat-form-field>
+          <mat-label>email</mat-label>
+          <input matInput formControlName="email" placeholder="email"
+                 required>
+                 </mat-form-field>
+                 <mat-form-field>
+                 <mat-label>password</mat-label>
+          <input matInput formControlName="pasword" placeholder="pasword"
+                 required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <p>You are now done.</p>
+      
+        <mat-list>
+
+          <mat-list-item> <strong>Nom:</strong> {{ this.firstFormGroup.value.nom }}</mat-list-item>
+       
+          <mat-list-item> <strong>Prenom:</strong> {{ this.firstFormGroup.value.prenom }}</mat-list-item>
+       
+          <mat-list-item> <strong>Age:</strong> {{ this.firstFormGroup.value.age }}</mat-list-item>
+       
+          <mat-list-item> <strong>diplome:</strong> {{ this.firstFormGroup.value.diplome }}</mat-list-item>
+       
+          <mat-list-item> <strong>des:</strong> {{ this.firstFormGroup.value.description }}</mat-list-item>
+       
+          <mat-list-item> <strong>phone:</strong> {{ this.firstFormGroup.value.phone }}</mat-list-item>
+          <mat-list-item> <strong>image:</strong> {{ this.firstFormGroup.value.imageUrl }}</mat-list-item>
+       
+       
+          <mat-list-item> <strong>jobTitle:</strong> {{ this.firstFormGroup.value.jobTitle }}</mat-list-item>
+       
+          <mat-list-item> <strong>Email:</strong> {{ this.secondFormGroup.value.email }}</mat-list-item>
+       
+          <mat-list-item> <strong>Password:</strong> {{ this.secondFormGroup.value.pasword }}</mat-list-item>
+       
+         </mat-list>
+
+
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+        <button type="submit" class="btn btn-primary" (click)="onadd()">Sign in</button>
+
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
+  

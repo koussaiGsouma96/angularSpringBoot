@@ -60,7 +60,11 @@ import { FullCalendarModule } from '@fullcalendar/angular'; // the main connecto
 import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
 import interactionPlugin from '@fullcalendar/interaction';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
-import { EditEmployeeComponent } from './edit-employee/edit-employee.component'; // a plugin
+import { EditEmployeeComponent } from './edit-employee/edit-employee.component';
+import { EnrgEmployeeComponent } from './enrg-employee/enrg-employee.component';
+import { SignupClientComponent } from './signup-client/signup-client.component';
+import { ProfilClientComponent } from './profil-client/profil-client.component';
+import { ControlleClientComponent } from './controlle-client/controlle-client.component'; // a plugin
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
   interactionPlugin
@@ -79,6 +83,10 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     ListeOffreComponent,
     AddEmployeeComponent,
     EditEmployeeComponent,
+    EnrgEmployeeComponent,
+    SignupClientComponent,
+    ProfilClientComponent,
+    ControlleClientComponent,
     
 
   ],

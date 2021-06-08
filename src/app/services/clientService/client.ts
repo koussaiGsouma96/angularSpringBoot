@@ -5,8 +5,8 @@ export interface Client {
     prenom: string;
     email: string;
     password: string;
-    telephone: string;
-    photoProfil: string;
+    phone: number;
+    photoprofil: string;
     
   }
   

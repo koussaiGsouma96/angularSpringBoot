@@ -15,6 +15,9 @@ export class ClientService {
   public getClients(): Observable<Client[]> {
     return this.http.get<Client[]>(`${this.apiServerUrl}/client/all`);
   }
+  public getSingleClient(id: Number): Observable<Client> {
+    return this.http.get<Client>(`${this.apiServerUrl}/client/find/`+id);
+  }
 
   public addClient(client: Client): Observable<Client> {
     return this.http.post<Client>(`${this.apiServerUrl}/client/add`, client);

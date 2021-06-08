@@ -8,6 +8,7 @@ export interface Employee {
   jobTitle: string;
   phone: string;
   imageUrl: string;
-  employeeCode: string;
   pasword: string;
+  description: string;
+  age: number ;
 }
